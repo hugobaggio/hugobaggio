@@ -1,122 +1,773 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hugo da Silva Baggio - Advogado</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, nav, main, footer {
-            padding: 20px;
-            text-align: center;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-        }
-        nav {
-            background-color: #f4f4f4;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #333;
-            text-decoration: none;
-        }
-        main {
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#6366f1" />
+  <title>Transferência de Arma - Mobile</title>
+
+  <!-- React 18 + ReactDOM -->
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Tailwind CSS -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Babel para JSX -->
+
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    
+    * { 
+      -webkit-tap-highlight-color: transparent; 
+      -webkit-touch-callout: none; 
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overscroll-behavior: none; 
+      -webkit-overflow-scrolling: touch;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .safe-area-bottom { 
+      padding-bottom: env(safe-area-inset-bottom); 
+    }
+    
+    .safe-area-top { 
+      padding-top: env(safe-area-inset-top); 
+    }
+
+    .shake {
+      animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+  </style>
+
 </head>
+
 <body>
-    <header>
-        <h1>Hugo da Silva Baggio</h1>
-        <p>Advogado Especializado em Processos Relacionados a Armas de Fogo</p>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#guias">Guias e Documentos</a>
-        <a href="#blog">Blog</a>
-        <a href="#contato">Contato</a>
-        <a href="#area-restrita">Área Restrita</a>
-    </nav>
-    <main>
-        <section id="home">
-            <h2>Bem-vindo ao meu site</h2>
-            <p>Sou Hugo da Silva Baggio, advogado especializado em processos administrativos relacionados a armas de fogo, tanto no Exército Brasileiro quanto na Polícia Federal. Aqui você encontrará informações sobre meus serviços, guias e documentos necessários para os processos, além de um blog com artigos e atualizações relevantes.</p>
-        </section>
-        <section id="sobre">
-            <h2>Sobre</h2>
-            <p>Com anos de experiência na área jurídica, atuo principalmente em processos administrativos perante o Exército Brasileiro e na Polícia Federal. Meu foco é defender os direitos dos meus clientes e orientá-los em procedimentos relacionados à aquisição e posse de armas de fogo.</p>
-        </section>
-        <section id="servicos">
-            <h2>Serviços</h2>
-            <ul>
-                <li>Defesa em processos administrativos de servidores</li>
-                <li>Assessoria para aquisição de armas de fogo</li>
-                <li>Solicitação de Certificado de Registro (CR)</li>
-                <li>Pedido de Autorização de Compra de Arma de Fogo</li>
-                <li>Certificado de Registro de Arma de Fogo (CRAF)</li>
-                <li>Guia de Tráfego (GT)</li>
-                <li>Processos de posse e porte de arma de fogo</li>
-                <li>Renovação de Certificado de Registro de Arma de Fogo</li>
-            </ul>
-        </section>
-        <section id="guias">
-            <h2>Guias e Documentos</h2>
-            <p>Aqui você encontrará todas as informações necessárias para cada tipo de processo, incluindo os documentos que você precisa fornecer para que possamos protocolar seu pedido.</p>
-            <ul>
-                <li><a href="#">Certificado de Registro</a></li>
-                <li><a href="#">Pedido de Autorização de Compra</a></li>
-                <li><a href="#">Certificado de Registro de Arma de Fogo</a></li>
-                <li><a href="#">Guia de Tráfego</a></li>
-                <li><a href="#">Posse de Arma de Fogo</a></li>
-                <li><a href="#">Porte de Arma de Fogo</a></li>
-                <li><a href="#">Renovação de Certificado de Registro de Arma de Fogo</a></li>
-            </ul>
-        </section>
-        <section id="blog">
-            <h2>Blog</h2>
-            <p>Leia nossos artigos e fique atualizado sobre as últimas notícias e mudanças na legislação relacionada a armas de fogo.</p>
-        </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Entre em contato para agendar uma consulta ou para mais informações.</p>
-            <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
-                <input type="submit" value="Enviar">
-            </form>
-        </section>
-        <section id="area-restrita">
-            <h2>Área Restrita</h2>
-            <p>Acesse ofertas exclusivas de armas de fogo com preços atrativos.</p>
-            <form>
-                <label for="idade">Idade:</label><br>
-                <input type="number" id="idade" name="idade" required><br><br>
-                <input type="submit" value="Acessar">
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Hugo da Silva Baggio. Todos os direitos reservados.</p>
-    </footer>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // Persistência local
+    const STORAGE_KEYS = {
+      etapas: 'tx_etapas_completas_v2',
+      adquirente: 'tx_dados_adquirente_v2',
+      alienante: 'tx_dados_alienante_v2',
+      arma: 'tx_dados_arma_v2',
+      activeTab: 'tx_active_tab_v2'
+    };
+
+    const loadJSON = (k, fallback) => {
+      try { 
+        const raw = localStorage.getItem(k); 
+        return raw ? JSON.parse(raw) : fallback; 
+      } catch { 
+        return fallback; 
+      }
+    };
+
+    const saveJSON = (k, v) => { 
+      try { 
+        localStorage.setItem(k, JSON.stringify(v)); 
+      } catch {} 
+    };
+
+    // Toast melhorado
+    const toast = {
+      success: (msg) => {
+        const div = document.createElement('div');
+        div.textContent = '✓ ' + msg;
+        div.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#10b981;color:white;padding:16px 24px;border-radius:12px;z-index:9999;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.3);max-width:90%;text-align:center;';
+        document.body.appendChild(div);
+        setTimeout(() => div.remove(), 3000);
+      },
+      error: (msg) => {
+        const div = document.createElement('div');
+        div.textContent = '⚠️ ' + msg;
+        div.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#ef4444;color:white;padding:16px 24px;border-radius:12px;z-index:9999;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,0.3);max-width:90%;text-align:center;';
+        document.body.appendChild(div);
+        setTimeout(() => div.remove(), 3000);
+      }
+    };
+
+    // Header
+    const MobileHeader = ({ progress, onMenuClick }) => {
+      const etapasTotais = 13;
+      const etapasFeitas = Math.round(progress / (100/etapasTotais));
+      
+      return (
+        <header className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg">
+          <div className="px-5 py-6">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h1 className="text-2xl font-black tracking-tight">Transferência</h1>
+                <p className="text-indigo-100 text-sm">Processo de Arma de Fogo</p>
+              </div>
+              <button
+                onClick={onMenuClick}
+                className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/25 transition flex items-center justify-center"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="relative w-20 h-20">
+                <svg className="w-20 h-20 -rotate-90">
+                  <circle cx="40" cy="40" r="36" stroke="#ffffff30" strokeWidth="6" fill="none" />
+                  <circle
+                    cx="40" cy="40" r="36" stroke="#ffffff" strokeWidth="6" fill="none"
+                    strokeDasharray={`${2 * Math.PI * 36}`}
+                    strokeDashoffset={`${2 * Math.PI * 36 * (1 - progress / 100)}`}
+                    strokeLinecap="round"
+                    style={{ transition: 'stroke-dashoffset .5s ease' }}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-xl font-black">{progress}%</span>
+                </div>
+              </div>
+              <div className="flex-1">
+                <div className="text-sm text-indigo-100">Progresso Total</div>
+                <div className="text-2xl font-bold">
+                  {progress === 100 ? '✓ Completo!' : `${etapasFeitas} de 13 etapas`}
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      );
+    };
+
+    // Card
+    const ModernCard = ({ icon, title, description, completed, fileCount, color = 'indigo', onClick }) => {
+      const borderColors = {
+        indigo: 'border-indigo-200',
+        green: 'border-green-200',
+        orange: 'border-orange-200',
+        purple: 'border-purple-200',
+        blue: 'border-blue-200',
+      };
+
+      return (
+        <div
+          onClick={onClick}
+          className={`relative bg-white rounded-3xl p-5 shadow-lg cursor-pointer hover:scale-[1.01] transition-transform ${completed ? 'border-2 border-green-400' : `border-2 ${borderColors[color]}`}`}
+        >
+          {completed && (
+            <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-400 to-green-600 w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+              </svg>
+            </div>
+          )}
+          {fileCount > 0 && (
+            <div className="absolute -top-2 -left-2 bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg font-bold text-sm">
+              {fileCount}
+            </div>
+          )}
+
+          <div className="flex items-start gap-4">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl flex-shrink-0 shadow-lg">
+              {icon}
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg font-bold text-gray-900 mb-1">{title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+              {completed && (
+                <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold mt-3">
+                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  Completo
+                </div>
+              )}
+            </div>
+            <svg className="w-6 h-6 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+      );
+    };
+
+    // BottomSheet
+    const BottomSheet = ({ isOpen, onClose, title, children }) => {
+      if (!isOpen) return null;
+      
+      return (
+        <>
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 animate-fadeIn"
+            onClick={onClose}
+            style={{ animation: 'fadeIn 0.2s ease-out' }}
+          />
+          <div 
+            className="fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl max-h-[90vh] overflow-y-auto z-50 shadow-2xl"
+            style={{ animation: 'slideUp 0.3s cubic-bezier(0.4,0,0.2,1)' }}
+          >
+            <div className="sticky top-0 bg-white z-10 px-5 pt-4 pb-3 border-b border-gray-100">
+              <div className="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-4"></div>
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl font-bold text-gray-900">{title}</h2>
+                <button
+                  onClick={onClose}
+                  className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="p-5">{children}</div>
+          </div>
+        </>
+      );
+    };
+
+    // Form - VERSÃO CORRIGIDA COM VALIDAÇÃO VISUAL
+    const MobileForm = ({ tipo, onSave, onClose, dados = {} }) => {
+      const [formData, setFormData] = useState(dados);
+      const [currentStep, setCurrentStep] = useState(0);
+      const [errors, setErrors] = useState({});
+      const [showErrors, setShowErrors] = useState(false);
+
+      const campos = {
+        adquirente: [
+          [
+            { nome: 'nome_completo', label: 'Nome Completo', tipo: 'text', icon: '👤', required: true },
+            { nome: 'cpf', label: 'CPF', tipo: 'text', icon: '📄', placeholder: '000.000.000-00', required: true },
+            { nome: 'rg', label: 'RG', tipo: 'text', icon: '🪪', required: true },
+          ],
+          [
+            { nome: 'email', label: 'Email', tipo: 'email', icon: '📧', required: true },
+            { nome: 'telefone', label: 'Telefone', tipo: 'tel', icon: '📱', placeholder: '(00) 00000-0000', required: true },
+            { nome: 'data_nascimento', label: 'Data de Nascimento', tipo: 'date', icon: '🎂', required: true },
+          ],
+          [
+            { nome: 'endereco_completo', label: 'Endereço Completo', tipo: 'text', icon: '🏠', required: true },
+            { nome: 'cep', label: 'CEP', tipo: 'text', icon: '📮', placeholder: '00000-000', required: true },
+            { nome: 'estado_civil', label: 'Estado Civil', tipo: 'select', icon: '💍', opcoes: ['Solteiro(a)', 'Casado(a)', 'Divorciado(a)', 'Viúvo(a)'], required: true },
+          ]
+        ],
+        alienante: [
+          [
+            { nome: 'nome_alienante', label: 'Nome Completo', tipo: 'text', icon: '👤', required: true },
+            { nome: 'cpf_alienante', label: 'CPF', tipo: 'text', icon: '📄', placeholder: '000.000.000-00', required: true },
+            { nome: 'doc_id_alienante', label: 'RG', tipo: 'text', icon: '🪪', required: true },
+          ],
+          [
+            { nome: 'email_alienante', label: 'Email', tipo: 'email', icon: '📧', required: true },
+            { nome: 'telefone_alienante', label: 'Telefone', tipo: 'tel', icon: '📱', required: true },
+            { nome: 'endereco_alienante', label: 'Endereço', tipo: 'text', icon: '🏠', required: true },
+          ]
+        ],
+        arma: [
+          [
+            { nome: 'sigma', label: 'Nº SIGMA/SINARM', tipo: 'text', icon: '🔢', required: true },
+            { nome: 'numero_de_serie', label: 'Nº de Série', tipo: 'text', icon: '#️⃣', required: true },
+            { nome: 'marca', label: 'Marca', tipo: 'text', icon: '🏷️', required: true },
+          ],
+          [
+            { nome: 'modelo', label: 'Modelo', tipo: 'text', icon: '📝', required: true },
+            { nome: 'calibre', label: 'Calibre', tipo: 'text', icon: '🎯', placeholder: 'Ex: .380, 9mm', required: true },
+            { nome: 'especie', label: 'Espécie', tipo: 'select', icon: '🔫', opcoes: ['Pistola', 'Revólver', 'Rifle', 'Espingarda'], required: true },
+          ],
+          [
+            { nome: 'pais_fabricacao', label: 'País de Fabricação', tipo: 'text', icon: '🌍', required: true },
+            { nome: 'acabamento', label: 'Acabamento', tipo: 'text', icon: '✨', required: true },
+            { nome: 'capacidade_carregamento', label: 'Capacidade', tipo: 'text', icon: '📊', required: true },
+          ]
+        ]
+      };
+
+      const steps = campos[tipo] || [];
+      const currentFields = steps[currentStep] || [];
+      const totalSteps = steps.length;
+
+      const validateStep = () => {
+        const newErrors = {};
+        currentFields.forEach(campo => {
+          if (campo.required && !String(formData[campo.nome] || '').trim()) {
+            newErrors[campo.nome] = true;
+          }
+        });
+        
+        setErrors(newErrors);
+        setShowErrors(true);
+        
+        return Object.keys(newErrors).length === 0;
+      };
+
+      const handleNext = () => {
+        if (!validateStep()) {
+          toast.error('Preencha todos os campos obrigatórios!');
+          // Scroll para o topo para ver os campos com erro
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        
+        setShowErrors(false);
+        setErrors({});
+        
+        if (currentStep < totalSteps - 1) {
+          setCurrentStep(currentStep + 1);
+        } else {
+          onSave(formData);
+          onClose();
+          toast.success('Dados salvos com sucesso!');
+        }
+      };
+
+      const handleBack = () => {
+        setShowErrors(false);
+        setErrors({});
+        if (currentStep > 0) {
+          setCurrentStep(currentStep - 1);
+        }
+      };
+
+      const handleSkip = () => {
+        setShowErrors(false);
+        setErrors({});
+        if (currentStep < totalSteps - 1) {
+          setCurrentStep(currentStep + 1);
+        }
+      };
+
+      return (
+        <div className="space-y-6">
+          <div className="flex gap-2">
+            {steps.map((_, idx) => (
+              <div
+                key={idx}
+                className={`flex-1 h-2 rounded-full transition-all ${idx <= currentStep ? 'bg-gradient-to-r from-indigo-500 to-purple-600' : 'bg-gray-200'}`}
+              />
+            ))}
+          </div>
+
+          <div className="text-center text-sm text-gray-500">
+            Etapa {currentStep + 1} de {totalSteps}
+          </div>
+
+          {showErrors && Object.keys(errors).length > 0 && (
+            <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 shake">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">⚠️</span>
+                <div>
+                  <div className="font-bold text-red-900 mb-1">Campos obrigatórios não preenchidos</div>
+                  <div className="text-sm text-red-700">Preencha os campos marcados em vermelho abaixo</div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="space-y-4">
+            {currentFields.map(campo => {
+              const hasError = showErrors && errors[campo.nome];
+              
+              return (
+                <div key={campo.nome} className="space-y-2">
+                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                    <span className="text-xl">{campo.icon}</span>
+                    {campo.label}
+                    {campo.required && <span className="text-red-500">*</span>}
+                    {hasError && <span className="text-red-500 text-xs ml-auto">⚠️ Obrigatório</span>}
+                  </label>
+                  {campo.tipo === 'select' ? (
+                    <select
+                      value={formData[campo.nome] || ''}
+                      onChange={(e) => {
+                        setFormData({ ...formData, [campo.nome]: e.target.value });
+                        if (hasError) {
+                          const newErrors = { ...errors };
+                          delete newErrors[campo.nome];
+                          setErrors(newErrors);
+                        }
+                      }}
+                      className={`w-full border-2 rounded-2xl p-4 focus:outline-none text-base transition-colors ${
+                        hasError 
+                          ? 'border-red-500 bg-red-50 shake' 
+                          : 'border-gray-200 focus:border-indigo-500'
+                      }`}
+                    >
+                      <option value="">Selecione...</option>
+                      {campo.opcoes?.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                    </select>
+                  ) : (
+                    <input
+                      type={campo.tipo}
+                      value={formData[campo.nome] || ''}
+                      onChange={(e) => {
+                        setFormData({ ...formData, [campo.nome]: e.target.value });
+                        if (hasError) {
+                          const newErrors = { ...errors };
+                          delete newErrors[campo.nome];
+                          setErrors(newErrors);
+                        }
+                      }}
+                      placeholder={campo.placeholder}
+                      className={`w-full border-2 rounded-2xl p-4 focus:outline-none text-base transition-colors ${
+                        hasError 
+                          ? 'border-red-500 bg-red-50 shake' 
+                          : 'border-gray-200 focus:border-indigo-500'
+                      }`}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="space-y-3 pt-4">
+            <div className="flex gap-3">
+              {currentStep > 0 && (
+                <button
+                  onClick={handleBack}
+                  className="flex-1 h-14 rounded-2xl border-2 border-gray-200 font-bold text-gray-700"
+                >
+                  ← Voltar
+                </button>
+              )}
+              <button
+                onClick={handleNext}
+                className="flex-1 h-14 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold shadow-lg"
+              >
+                {currentStep < totalSteps - 1 ? 'Próximo →' : '✓ Salvar'}
+              </button>
+            </div>
+            
+            {currentStep < totalSteps - 1 && (
+              <button
+                onClick={handleSkip}
+                className="w-full h-12 rounded-2xl text-gray-500 font-semibold hover:bg-gray-50 transition-colors"
+              >
+                Pular esta etapa →
+              </button>
+            )}
+          </div>
+        </div>
+      );
+    };
+
+    // Upload
+    const MobileUpload = ({ onUpload, files = [] }) => {
+      const fileInputRef = useRef(null);
+      
+      return (
+        <div className="space-y-4">
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            className="w-full h-32 rounded-3xl border-4 border-dashed border-indigo-200 bg-indigo-50 flex flex-col items-center justify-center gap-3"
+          >
+            <div className="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center">
+              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </div>
+            <div className="text-center">
+              <div className="font-bold text-indigo-900">Adicionar Arquivos</div>
+              <div className="text-sm text-indigo-600">PDF, JPG, PNG</div>
+            </div>
+          </button>
+
+          <input
+            ref={fileInputRef}
+            type="file"
+            multiple
+            accept=".pdf,.jpg,.jpeg,.png"
+            className="hidden"
+            onChange={(e) => {
+              const arr = Array.from(e.target.files || []);
+              if (!arr.length) return;
+              onUpload(arr);
+              toast.success(`${arr.length} arquivo(s) adicionado(s).`);
+            }}
+          />
+
+          {files.length > 0 && (
+            <div className="space-y-2">
+              <div className="text-sm font-semibold text-gray-700">Arquivos Adicionados:</div>
+              {files.map((file, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-4 bg-green-50 rounded-2xl border-2 border-green-200">
+                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-semibold text-gray-900 truncate">{file.name}</div>
+                    <div className="text-xs text-gray-500">{(file.size / 1024).toFixed(0)} KB</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    };
+
+    // Bottom Navigation
+    const BottomNav = ({ activeTab, onTabChange }) => {
+      const tabs = [
+        { id: 'etapas', icon: '📋', label: 'Etapas' },
+        { id: 'documentos', icon: '📎', label: 'Docs' },
+        { id: 'ajuda', icon: '❓', label: 'Ajuda' },
+      ];
+
+      return (
+        <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 safe-area-bottom">
+          <div className="flex items-center justify-around py-2">
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => onTabChange(tab.id)}
+                className={`flex flex-col items-center gap-1 py-2 px-6 rounded-2xl transition-all ${activeTab === tab.id ? 'bg-indigo-50' : ''}`}
+              >
+                <span className="text-2xl">{tab.icon}</span>
+                <span className={`text-xs font-semibold ${activeTab === tab.id ? 'text-indigo-600' : 'text-gray-500'}`}>
+                  {tab.label}
+                </span>
+              </button>
+            ))}
+          </div>
+        </nav>
+      );
+    };
+
+    // App Principal
+    const MobileApp = () => {
+      const [activeTab, setActiveTab] = useState(loadJSON(STORAGE_KEYS.activeTab, 'etapas'));
+      const [sheetOpen, setSheetOpen] = useState(null);
+      const [sheetData, setSheetData] = useState(null);
+      const [etapasCompletas, setEtapasCompletas] = useState(new Set(loadJSON(STORAGE_KEYS.etapas, [])));
+      const [documentos, setDocumentos] = useState({});
+      const [dadosAdquirente, setDadosAdquirente] = useState(loadJSON(STORAGE_KEYS.adquirente, {}));
+      const [dadosAlienante, setDadosAlienante] = useState(loadJSON(STORAGE_KEYS.alienante, {}));
+      const [dadosArma, setDadosArma] = useState(loadJSON(STORAGE_KEYS.arma, {}));
+      const [menuOpen, setMenuOpen] = useState(false);
+
+      const etapas = [
+        { id: 'adquirente', icon: '👤', title: 'Adquirente', desc: 'Dados de quem está comprando', color: 'indigo', tipo: 'form' },
+        { id: 'alienante', icon: '👥', title: 'Alienante', desc: 'Dados de quem está vendendo', color: 'indigo', tipo: 'form' },
+        { id: 'arma', icon: '🔫', title: 'Dados da Arma', desc: 'Especificações técnicas', color: 'orange', tipo: 'form' },
+        { id: 'antecedentes', icon: '📋', title: 'Antecedentes', desc: 'Certidão da PF', color: 'green', tipo: 'upload', link: 'https://antecedentes.dpf.gov.br/' },
+        { id: 'residencia', icon: '🏠', title: 'Comprovante de Residência', desc: 'Conta recente (máx 3 meses)', color: 'purple', tipo: 'upload' },
+        { id: 'identidade', icon: '🪪', title: 'RG e CPF', desc: 'Frente e verso', color: 'blue', tipo: 'upload' },
+        { id: 'caex', icon: '🎯', title: 'CAEX', desc: 'Capacidade técnica', color: 'orange', tipo: 'upload' },
+        { id: 'psicologico', icon: '🧠', title: 'Laudo Psicológico', desc: 'Válido por 12 meses', color: 'green', tipo: 'upload' },
+        { id: 'craf', icon: '📜', title: 'CRAF Atual', desc: 'Em nome do alienante', color: 'purple', tipo: 'upload' },
+        { id: 'nota_fiscal', icon: '🧾', title: 'Nota Fiscal', desc: 'Documento de origem', color: 'blue', tipo: 'upload' },
+        { id: 'renda', icon: '💰', title: 'Comprovante de Renda', desc: 'Holerite ou IR', color: 'green', tipo: 'upload' },
+        { id: 'fiscal', icon: '📊', title: 'Regularidade Fiscal', desc: 'Certidão da Receita', color: 'orange', tipo: 'upload', link: 'https://servicos.receita.fazenda.gov.br/' },
+        { id: 'outros', icon: '📎', title: 'Outros Docs', desc: 'Documentos adicionais', color: 'purple', tipo: 'upload' },
+      ];
+
+      const progresso = Math.round((etapasCompletas.size / 13) * 100);
+
+      useEffect(() => saveJSON(STORAGE_KEYS.activeTab, activeTab), [activeTab]);
+      useEffect(() => saveJSON(STORAGE_KEYS.etapas, Array.from(etapasCompletas)), [etapasCompletas]);
+      useEffect(() => saveJSON(STORAGE_KEYS.adquirente, dadosAdquirente), [dadosAdquirente]);
+      useEffect(() => saveJSON(STORAGE_KEYS.alienante, dadosAlienante), [dadosAlienante]);
+      useEffect(() => saveJSON(STORAGE_KEYS.arma, dadosArma), [dadosArma]);
+
+      const handleCardClick = (etapa) => {
+        if (etapa.tipo === 'form') {
+          setSheetOpen(etapa.id);
+          if (etapa.id === 'adquirente') setSheetData(dadosAdquirente);
+          if (etapa.id === 'alienante') setSheetData(dadosAlienante);
+          if (etapa.id === 'arma') setSheetData(dadosArma);
+        } else if (etapa.tipo === 'upload') {
+          if (etapa.link) window.open(etapa.link, '_blank', 'noopener,noreferrer');
+          setSheetOpen(etapa.id);
+        }
+      };
+
+      const handleSaveForm = (tipo, dados) => {
+        if (tipo === 'adquirente') setDadosAdquirente(dados);
+        if (tipo === 'alienante') setDadosAlienante(dados);
+        if (tipo === 'arma') setDadosArma(dados);
+        setEtapasCompletas(prev => new Set([...prev, tipo]));
+        setSheetOpen(null);
+      };
+
+      const handleFileUpload = (id, files) => {
+        setDocumentos(prev => ({ ...prev, [id]: [...(prev[id] || []), ...files] }));
+        setEtapasCompletas(prev => new Set([...prev, id]));
+      };
+
+      const handleGenerate = () => {
+        if (progresso < 100) {
+          toast.error('Complete todas as etapas antes de gerar!');
+          return;
+        }
+        toast.success('Processo completo! Todos os dados foram coletados.');
+      };
+
+      return (
+        <div className="min-h-screen pb-24 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+          <MobileHeader progress={progresso} onMenuClick={() => setMenuOpen(true)} />
+
+          <main className="px-4 py-6 space-y-4">
+            {activeTab === 'etapas' && etapas.map(etapa => (
+              <div key={etapa.id}>
+                <ModernCard
+                  icon={etapa.icon}
+                  title={etapa.title}
+                  description={etapa.desc}
+                  color={etapa.color}
+                  completed={etapasCompletas.has(etapa.id)}
+                  fileCount={documentos[etapa.id]?.length || 0}
+                  onClick={() => handleCardClick(etapa)}
+                />
+              </div>
+            ))}
+
+            {activeTab === 'documentos' && (
+              <section className="bg-white rounded-3xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold mb-4 text-gray-900">📁 Documentos</h3>
+                {Object.entries(documentos).length === 0 ? (
+                  <p className="text-gray-500 text-center py-8">Nenhum documento adicionado ainda</p>
+                ) : (
+                  <div className="space-y-3">
+                    {Object.entries(documentos).map(([id, files]) => (
+                      <div key={id} className="p-4 bg-green-50 rounded-2xl">
+                        <div className="font-semibold text-green-900 mb-2 capitalize">
+                          {id.replace(/_/g, ' ')}
+                        </div>
+                        <div className="text-sm text-green-700">
+                          {files.length} arquivo(s)
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </section>
+            )}
+
+            {activeTab === 'ajuda' && (
+              <section className="bg-white rounded-3xl p-6 shadow-lg space-y-4">
+                <h3 className="text-xl font-bold mb-4 text-gray-900">❓ Ajuda</h3>
+                <div className="space-y-3">
+                  <div className="p-4 bg-blue-50 rounded-2xl">
+                    <div className="font-semibold text-blue-900 mb-1">📞 Polícia Federal</div>
+                    <div className="text-sm text-blue-700">Telefone: 194</div>
+                  </div>
+                  <div className="p-4 bg-purple-50 rounded-2xl">
+                    <div className="font-semibold text-purple-900 mb-1">🌐 Portal</div>
+                    <div className="text-sm text-purple-700">www.gov.br/pf</div>
+                  </div>
+                  <div className="p-4 bg-orange-50 rounded-2xl">
+                    <div className="font-semibold text-orange-900 mb-1">💡 Dica</div>
+                    <div className="text-sm text-orange-700">Complete as etapas na ordem para melhor organização</div>
+                  </div>
+                </div>
+              </section>
+            )}
+          </main>
+
+          {progresso === 100 && (
+            <button
+              onClick={handleGenerate}
+              className="fixed bottom-20 right-5 w-16 h-16 rounded-full bg-gradient-to-r from-green-400 to-green-600 text-white shadow-xl flex items-center justify-center"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            </button>
+          )}
+
+          <BottomSheet
+            isOpen={sheetOpen === 'adquirente'}
+            onClose={() => setSheetOpen(null)}
+            title="👤 Dados do Adquirente"
+          >
+            <MobileForm
+              tipo="adquirente"
+              dados={dadosAdquirente}
+              onSave={(dados) => handleSaveForm('adquirente', dados)}
+              onClose={() => setSheetOpen(null)}
+            />
+          </BottomSheet>
+
+          <BottomSheet
+            isOpen={sheetOpen === 'alienante'}
+            onClose={() => setSheetOpen(null)}
+            title="👥 Dados do Alienante"
+          >
+            <MobileForm
+              tipo="alienante"
+              dados={dadosAlienante}
+              onSave={(dados) => handleSaveForm('alienante', dados)}
+              onClose={() => setSheetOpen(null)}
+            />
+          </BottomSheet>
+
+          <BottomSheet
+            isOpen={sheetOpen === 'arma'}
+            onClose={() => setSheetOpen(null)}
+            title="🔫 Dados da Arma"
+          >
+            <MobileForm
+              tipo="arma"
+              dados={dadosArma}
+              onSave={(dados) => handleSaveForm('arma', dados)}
+              onClose={() => setSheetOpen(null)}
+            />
+          </BottomSheet>
+
+          {['antecedentes','residencia','identidade','caex','psicologico','craf','nota_fiscal','renda','fiscal','outros'].map(id => (
+            <BottomSheet
+              key={id}
+              isOpen={sheetOpen === id}
+              onClose={() => setSheetOpen(null)}
+              title={`${etapas.find(e => e.id === id)?.icon || '📎'} ${etapas.find(e => e.id === id)?.title || 'Documentos'}`}
+            >
+              <MobileUpload
+                files={documentos[id] || []}
+                onUpload={(files) => handleFileUpload(id, files)}
+              />
+            </BottomSheet>
+          ))}
+
+          <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
+        </div>
+      );
+    };
+
+    // Render
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<MobileApp />);
+  </script>
+
+  <style>
+    @keyframes slideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
 </body>
 </html>
